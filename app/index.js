@@ -1,4 +1,11 @@
+//Node modules
 var bar = require('./content.js');
+bar();
 
-document.write('hello from the other side');
-bar();	
+
+//ES6 modules
+
+import Point from './Point';
+var body = document.querySelector('body');
+
+body.textContent = 'Good point: ' + new Point(28, 12);

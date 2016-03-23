@@ -1,3 +1,5 @@
+var path = require('path');
+
 module.exports = {
     entry: "./app/index.js",
     output: {
@@ -5,8 +7,13 @@ module.exports = {
         filename: "bundle.js"
     },
     module: {
-        loaders: [
-            // { test: /\.css$/, loader: "style!css" }
-        ]
-    }
+        loaders: [{
+            test: /\.js$/,
+            include: path.join(__dirname, 'app'),
+            loader: 'babel-loader',
+            query: {
+                presets: ['es2015']
+            }
+        }]
+    },
 };
