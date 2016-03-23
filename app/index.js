@@ -9,3 +9,6 @@ import Point from './Point';
 var body = document.querySelector('body');
 
 body.textContent = 'Good point: ' + new Point(28, 12);
+
+import square from './square';
+console.log(square(85));

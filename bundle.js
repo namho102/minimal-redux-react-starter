@@ -50,6 +50,10 @@
 
 	var _Point2 = _interopRequireDefault(_Point);
 
+	var _square = __webpack_require__(2);
+
+	var _square2 = _interopRequireDefault(_square);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	//Node modules
@@ -62,6 +66,8 @@
 
 	body.textContent = 'Good point: ' + new _Point2.default(28, 12);
 
+	console.log((0, _square2.default)(85));
+
 /***/ },
 /* 1 */
 /***/ function(module, exports) {
@@ -73,7 +79,20 @@
 	};
 
 /***/ },
-/* 2 */,
+/* 2 */
+/***/ function(module, exports) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.default = square;
+	function square(x) {
+	  return x * x;
+	}
+
+/***/ },
 /* 3 */,
 /* 4 */
 /***/ function(module, exports) {
