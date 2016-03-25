@@ -1,28 +1,23 @@
-/*
-//Node modules
-var bar = require('./content.js');
-bar();
 
+import React from 'react'
+import ReactDOM from 'react-dom'
+import { createStore } from 'redux'
+import Counter from './components/Counter'
+import counter from './reducers'
 
-//ES6 modules
+const store = createStore(counter)
+const rootEl = document.getElementById('root')
 
-import Point from './Point';
-var body = document.querySelector('body');
-console.log(new Point(24, 12));
-// body.textContent = 'Good point: ' + new Point(24, 12);
+function render() {
+  ReactDOM.render(
+    <Counter
+      value={store.getState()}
+      onIncrement={() => store.dispatch({ type: 'INCREMENT' })}
+      onDecrement={() => store.dispatch({ type: 'DECREMENT' })}
+    />,
+    rootEl  
+  )
+}
 
-import square from './square';
-console.log(square(85));
-
-*/
-
-//React
-import HelloWorld from './hello.jsx';
-import ReactDOM from 'react-dom';
-import React from 'react'; //???
-
-
-ReactDOM.render(<HelloWorld name='Nam'/>, document.getElementById('hello'));
-
-
-
+render()
+store.subscribe(render)
